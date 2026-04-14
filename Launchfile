@@ -37,8 +37,8 @@ env:
 
 commands:
   bootstrap:
-    command: pnpm paperclipai auth bootstrap-ceo
-    timeout: 30s
+    command: sh scripts/launchpad-bootstrap.sh
+    timeout: 60s
     capture:
       invite_url:
         pattern: "Invite URL: (.+)"
