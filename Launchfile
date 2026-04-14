@@ -1,0 +1,47 @@
+version: launch/v1
+name: paperclip
+description: AI-powered project management with agent orchestration
+runtime: node
+
+requires:
+  - type: postgres
+    description: Primary database
+
+provides:
+  - protocol: http
+    port: 3100
+    exposed: true
+    description: Web UI and API server
+
+env:
+  BETTER_AUTH_SECRET:
+    required: true
+    description: Secret for session signing (auto-generated if not set)
+    generate: hex(32)
+  DATABASE_URL:
+    description: Postgres connection string (auto-provisioned by Launchpad)
+  PAPERCLIP_PUBLIC_URL:
+    description: Public URL for the app (set by Launchpad)
+    value: $app.url
+  PAPERCLIP_ALLOWED_HOSTNAMES:
+    description: Allowed hostnames for CORS
+    value: $app.host
+  PAPERCLIP_DEPLOYMENT_MODE:
+    default: authenticated
+  PAPERCLIP_DEPLOYMENT_EXPOSURE:
+    default: private
+  PORT:
+    default: "3100"
+  SERVE_UI:
+    default: "true"
+
+commands:
+  bootstrap:
+    command: pnpm paperclipai auth bootstrap-ceo
+    timeout: 30000
+    capture:
+      invite_url:
+        pattern: "Invite URL: (.+)"
+        description: Admin invite URL for first-time setup
+
+health: /api/health
