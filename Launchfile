@@ -38,7 +38,7 @@ env:
 commands:
   bootstrap:
     command: pnpm paperclipai auth bootstrap-ceo
-    timeout: 30000
+    timeout: 30s
     capture:
       invite_url:
         pattern: "Invite URL: (.+)"

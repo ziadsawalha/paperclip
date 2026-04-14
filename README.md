@@ -13,6 +13,7 @@
   <a href="https://github.com/paperclipai/paperclip/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" /></a>
   <a href="https://github.com/paperclipai/paperclip/stargazers"><img src="https://img.shields.io/github/stars/paperclipai/paperclip?style=flat" alt="Stars" /></a>
   <a href="https://discord.gg/m4HZY7xNG3"><img src="https://img.shields.io/discord/000000000?label=discord" alt="Discord" /></a>
+  <a href="https://launchfile.dev"><img src="https://img.shields.io/badge/Launchfile-ready-00C853?logo=rocket&logoColor=white" alt="Launchfile Ready" /></a>
 </p>
 
 <br/>
